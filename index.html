@@ -1,411 +1,725 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+  <title>Fisher symmetry and the geometry of quantum states</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="css/mystyle.css">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
 
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
+<section class="titlepage">
+  <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">
+  <h1>Fisher symmetry</h1>
+  <h3>and the geometry of quantum states</h3>
+  </span>
+  <p>
+    <small><span xmlns:cc="http://creativecommons.org/ns#"
+      property="cc:attributionName">Jonathan A. Gross</span>,
+      Amir Kalev, Howard Barnum, Carlton M. Caves
+    </small>
+  </p>
+  <p>
+    <small><em>Center for Quantum Information and Control</em>,
+    University of New Mexico</small>
+  </p>
+  <p><a rel="license"
+    href="http://creativecommons.org/licenses/by-sa/4.0/"><img
+    alt="Creative Commons License" style="border-width:0"
+    src="img/by-sa.svg"></a>
+  </p>
+</section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+<section>
+  <h2>Local tomography</h2>
+  <img src='img/target_state.svg' height=400px />
+  <p>Have device to prepare a target state</p>
+</section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
+<section>
+  <h2>Local tomography</h2>
+  <img src='img/target_state_deviations.svg' height=400px />
+  <p>Want to measure deviations</p>
+</section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+<section>
+  <h2>Distances between states</h2>
+  <img src='img/state_distances.svg' height=400px />
+  <p>Is the <span class='blue'><strong>blue</strong></span> or
+  <span class='green'><strong>green</strong></span> state closer to the
+  <span class='red'><strong>target</strong></span>?</p>
+  <p>Want an operational notion of distance</p>
+</section>
 
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
+<section>
+  <h2>Statistical distance</h2>
+  <img src='img/coin_distance.svg' height=400px />
+  <p>How far apart are coins with different biases?</p>
+  <cite>W. K. Wootters,
+  <a href='http://dx.doi.org/10.1103/PhysRevD.23.357'>Phys. Rev. D
+  <strong>23</strong>, 357 (1981)</a></cite>
+</section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+<section>
+  <h2>Statistical distance</h2>
+  <img src='img/coin_distance_w_semicircle.svg' height=400px />
+  <p>How far apart are coins with different biases?</p>
+  <cite>W. K. Wootters,
+  <a href='http://dx.doi.org/10.1103/PhysRevD.23.357'>Phys. Rev. D
+  <strong>23</strong>, 357 (1981)</a></cite>
+</section>
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+<section>
+  <h2>Statistical distance</h2>
+  <img src='img/coin_distance_w_fluctuations.svg' height=400px />
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>d</mi><mi>s</mi><mo stretchy="false">∼</mo><mfrac><mrow><mi>d
+  </mi><mi>p</mi></mrow><mrow><mi mathvariant="normal">Δ</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mover accent="true"><mi>p</mi>
+  <mo stretchy="false" accent="true">^</mo></mover></mrow></mrow></mfrac></mtd>
+  </mtr></mtable></mrow><annotation encoding="application/x-tex">
+  \begin{align}
+  ds\sim\frac{dp}{\Delta \hat{p}}
+  \end{align}</annotation></semantics></math>
+</section>
 
-						```
-						<section data-markdown>
-						  ## Markdown support
+<section>
+  <h2>Statistical distance</h2>
+  <img src='img/coin_distance_w_fluctuations.svg' height=400px />
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" coluspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="normal">Δ</mi><mrow class="MJX-TeXAtom-ORD">
+  <mover accent="true"><mi>p</mi><mo stretchy="false" accent="true">^</mo>
+  </mover></mrow></mtd><mtd><mi/><mo stretchy="false">≥</mo><mfrac><mn>1</mn>
+  <msqrt><mi>F</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">
+  )</mo></msqrt></mfrac></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    \Delta\hat{p}&amp;\geq\frac{1}{\sqrt{F(p)}}
+  \end{align}</annotation></semantics></math>
+</section>
 
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
+<section>
+  <h2>Fisher information</h2>
+  <p>The <strong>Cramér&ndash;Rao bound</strong> is achievable</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="normal">Δ</mi><mrow class="MJX-TeXAtom-ORD">
+  <mover accent="true"><mi>p</mi><mo stretchy="false" accent="true">^</mo>
+  </mover></mrow></mtd><mtd><mi/><mo stretchy="false">→</mo><mfrac><mn>1</mn>
+  <msqrt><mi>F</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">
+  )</mo></msqrt></mfrac></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    \Delta\hat{p}&amp;\to\frac{1}{\sqrt{F(p)}}
+  \end{align}</annotation></semantics></math>
+  <p>The <strong>Fisher information (FI)</strong>
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi>
+  <mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow>
+  <annotation encoding="application/x-tex">F(p)</annotation></semantics></math>
+  is given by</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>F</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">
+  )</mo></mtd><mtd><mi/><mo>=</mo><munder><mo stretchy="false">∑</mo><mtext>
+  Outcomes</mtext></munder><mfrac><mrow><msub><mi mathvariant="normal">∂</mi>
+  <mi>p</mi></msub><mi mathvariant="normal">Pr</mi><mo>⁡</mo>
+  <mo stretchy="false">(</mo><mtext>outcome</mtext>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mi>p</mi>
+  <mo stretchy="false">)</mo><mspace width=".1667em"/><msub>
+  <mi mathvariant="normal">∂</mi><mi>p</mi></msub><mi mathvariant="normal">
+  Pr</mi><mo>⁡</mo><mo stretchy="false">(</mo><mtext>outcome</mtext>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mi>p</mi>
+  <mo stretchy="false">)</mo></mrow><mrow><mi mathvariant="normal">Pr</mi><mo>
+  ⁡</mo><mo stretchy="false">(</mo><mtext>outcome</mtext>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mi>p</mi>
+  <mo stretchy="false">)</mo></mrow></mfrac></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    F(p)&amp;=\sum_\text{Outcomes}
+    \frac{\partial_p\operatorname{Pr}(\text{outcome}|p)
+    \,\partial_p\operatorname{Pr}(\text{outcome}|p)}
+    {\operatorname{Pr}(\text{outcome}|p)}
+  \end{align}</annotation></semantics></math>
+</section>
 
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+<section>
+  <h2>Multiple parameters</h2>
+  <img src='img/badaman-dice.svg' height=300px />
+  <p>For multiple parameters, the FI becomes a matrix</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><msub><mi>F</mi><mrow class="MJX-TeXAtom-ORD"><mi>j</mi><mi>k</mi>
+  </mrow></msub><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">p</mi></mrow><mo stretchy="false">)</mo></mtd><mtd>
+  <mi/><mo>=</mo><munder><mo stretchy="false">∑</mo><mtext>Outcomes</mtext>
+  </munder><mfrac><mrow><msub><mi mathvariant="normal">∂</mi><mi>j</mi></msub>
+  <mi mathvariant="normal">Pr</mi><mo>⁡</mo><mo stretchy="false">(</mo><mtext>
+  outcome</mtext><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo>
+  </mrow><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">p</mi></mrow>
+  <mo stretchy="false">)</mo><mspace width=".1667em"/><msub>
+  <mi mathvariant="normal">∂</mi><mi>k</mi></msub><mi mathvariant="normal">
+  Pr</mi><mo>⁡</mo><mo stretchy="false">(</mo><mtext>outcome</mtext>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">p</mi></mrow>
+  <mo stretchy="false">)</mo></mrow><mrow><mi mathvariant="normal">Pr</mi><mo>
+  ⁡</mo><mo stretchy="false">(</mo><mtext>outcome</mtext>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">p</mi></mrow>
+  <mo stretchy="false">)</mo></mrow></mfrac></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    F_{jk}(\mathbf{p})&amp;=\sum_\text{Outcomes}
+    \frac{\partial_j\operatorname{Pr}(\text{outcome}|\mathbf{p})
+    \,\partial_k\operatorname{Pr}(\text{outcome}|\mathbf{p})}
+    {\operatorname{Pr}(\text{outcome}|\mathbf{p})}
+  \end{align}</annotation></semantics></math>
+  <p>This matrix can be used as a metric:
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi>
+  <mi>s</mi><mo stretchy="false">∼</mo><msqrt><mi>d</mi><msup>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi></mrow>
+  </msup><mi>F</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo><mi>d</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow></msqrt>
+  </mrow><annotation encoding="application/x-tex">
+  ds\sim\sqrt{d\mathbf{x}^\mathsf{T}F(\mathbf{x})d\mathbf{x}}</annotation>
+  </semantics></math></p>
+</section>
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
+<section>
+  <h2>Including quantum mechanics</h2>
+  <p>Random variable defined by a positive-operator-valued measure (POVM),
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow>
+  <mo fence="false" stretchy="false">{</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><mo fence="false" stretchy="false">}
+  </mo></mrow><annotation encoding="application/x-tex">\{E^\xi\}</annotation>
+  </semantics></math></p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="normal">Pr</mi><mo>⁡</mo><mo stretchy="false">
+  (</mo><mi mathvariant="normal">Ξ</mi><mo>=</mo><mi mathvariant="italic">ξ</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mo stretchy="false">)</mo></mtd><mtd><mi/><mo>=</mo><mi mathvariant="normal">
+  tr</mi><mo>⁡</mo><mo stretchy="false">[</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><mi mathvariant="italic">ρ</mi>
+  <mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo>
+  <mo stretchy="false">]</mo></mtd><mtd><mi/><munder><mo stretchy="false">∑</mo>
+  <mi mathvariant="italic">ξ</mi></munder><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup></mtd><mtd><mi/><mo>=</mo><mi>I</mi>
+  </mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">
+  \begin{align}
+    \operatorname{Pr}(\Xi=\xi|\mathbf{x})
+    &amp;=\operatorname{tr}[E^\xi\rho(\mathbf{x})] &amp; \sum_\xi E^\xi&amp;=I
+  \end{align}</annotation></semantics></math>
+  <p>We write the FI generated by a particular POVM as</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><msub><mi>C</mi><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="italic">α</mi><mi mathvariant="italic">β</mi></mrow></msub>
+  <mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo></mtd><mtd>
+  <mi/><mo>=</mo><munder><mo stretchy="false">∑</mo><mi mathvariant="italic">
+  ξ</mi></munder><mfrac><mrow><mi mathvariant="normal">tr</mi><mo>⁡</mo>
+  <mo stretchy="false">[</mo><msup><mi>E</mi><mi mathvariant="italic">ξ</mi>
+  </msup><msub><mi mathvariant="normal">∂</mi><mi mathvariant="italic">α</mi>
+  </msub><mi mathvariant="italic">ρ</mi><mo stretchy="false">(</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mo stretchy="false">)</mo><mo stretchy="false">]</mo>
+  <mi mathvariant="normal">tr</mi><mo>⁡</mo><mo stretchy="false">[</mo><msup>
+  <mi>E</mi><mi mathvariant="italic">ξ</mi></msup><msub>
+  <mi mathvariant="normal">∂</mi><mi mathvariant="italic">β</mi></msub>
+  <mi mathvariant="italic">ρ</mi><mo stretchy="false">(</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mo stretchy="false">)</mo><mo stretchy="false">]</mo></mrow><mrow>
+  <mi mathvariant="normal">tr</mi><mo>⁡</mo><mo stretchy="false">[</mo><msup>
+  <mi>E</mi><mi mathvariant="italic">ξ</mi></msup><mi mathvariant="italic">
+  ρ</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo>
+  <mo stretchy="false">]</mo></mrow></mfrac></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    C_{\alpha\beta}(\mathbf{x})&amp;=\sum_\xi\frac{
+    \operatorname{tr}[E^\xi\partial_\alpha\rho(\mathbf{x})]
+    \operatorname{tr}[E^\xi\partial_\beta\rho(\mathbf{x})]}
+    {\operatorname{tr}[E^\xi\rho(\mathbf{x})]}
+  \end{align}</annotation></semantics></math>
+</section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
+<section>
+  <h2>Measurement dependence</h2>
+  <img src="img/two-states.svg" height=400px />
+  <p>&zwnj;</p><!-- Props image up to same height as following slide -->
+</section>
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
+<section>
+  <h2>Measurement dependence</h2>
+  <img src="img/1st-measurement.svg" height=400px />
+  <p>&zwnj;</p><!-- Props image up to same height as following slide -->
+</section>
 
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
+<section>
+  <h2>Measurement dependence</h2>
+  <img src="img/three-states.svg" height=400px />
+  <p>&zwnj;</p><!-- Props image up to same height as following slide -->
+</section>
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
+<section>
+  <h2>Measurement dependence</h2>
+  <img src="img/2nd-measurement.svg" height=400px />
+  <p>&zwnj;</p><!-- Props image up to same height as following slide -->
+</section>
 
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
+<section>
+  <h2>Quantum Fisher information</h2>
+  <img src="img/quantum-fisher.svg" height=400px />
+  <p><cite>S. L. Braunstein and C. M. Caves,
+  <a href="http://dx.doi.org/10.1103/PhysRevLett.72.3439">Phys. Rev. Lett.
+    <strong>72</strong>, 3439 (1994)</a></cite></p>
+</section>
 
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+<section>
+  <h2>Uncertainty relations</h2>
+  <img src='img/target_state_deviations.svg' height=300px />
+  <p>Would like to have quantum-limited accuracy in all directions</p>
+  <p>Complementarity forbids this. A useful expression of complementarity is
+  the <strong>Gill&ndash;Massar (GM)</strong> bound.
+</section>
 
-    var nodes = document.querySelectorAll( selector );
+<section>
+  <h2>Gill&ndash;Massar bound</h2>
+  <p>Assume Hilbert space
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow>
+  <mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="script" class="MJX-tex-caligraphic">H</mi></mrow></mrow>
+  <annotation encoding="application/x-tex">\mathcal{H}</annotation></semantics>
+  </math>
+  of finite dimension
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi>
+  </mrow><annotation encoding="application/x-tex">d</annotation></semantics>
+  </math></p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="normal">tr</mi><mo>⁡</mo><mo stretchy="false">
+  [</mo><msup><mi>Q</mi><mrow class="MJX-TeXAtom-ORD"><mo>−</mo><mn>1</mn>
+  </mrow></msup><mi>C</mi><mo stretchy="false">]</mo></mtd><mtd><mi/>
+  <mo stretchy="false">≤</mo><mi>d</mi><mo>−</mo><mn>1</mn></mtd><mtd><msup><mi>
+  Q</mi><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="italic">α</mi>
+  <mi mathvariant="italic">β</mi></mrow></msup><msub><mi>C</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="italic">α</mi>
+  <mi mathvariant="italic">β</mi></mrow></msub></mtd><mtd><mi/>
+  <mo stretchy="false">≤</mo><mi>d</mi><mo>−</mo><mn>1</mn></mtd></mtr></mtable>
+  </mrow><annotation encoding="application/x-tex">
+  \begin{align}
+    \operatorname{tr}[Q^{-1}C]&amp;\leq d-1 &amp;
+    Q^{\alpha\beta}C_{\alpha\beta}&amp;\leq d-1
+  \end{align}</annotation></semantics></math>
+  <p>Can always choose parameters so
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi>
+  <mo>=</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">Q=I
+  </annotation></semantics></math>.</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="normal">tr</mi><mo>⁡</mo><mo stretchy="false">
+  [</mo><mi>C</mi><mo stretchy="false">]</mo></mtd><mtd><mi/>
+  <mo stretchy="false">≤</mo><mi>d</mi><mo>−</mo><mn>1</mn></mtd></mtr></mtable>
+  </mrow><annotation encoding="application/x-tex">
+  \begin{align}
+    \operatorname{tr}[C]&amp;\leq d-1
+  \end{align}</annotation></semantics></math>
+  <p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi>
+  <mo>=</mo><mi>Q</mi><mo>=</mo><mi>I</mi></mrow>
+  <annotation encoding="application/x-tex">C=Q=I</annotation></semantics></math>
+  is <strong>unphysical</strong> because</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="normal">tr</mi><mo>⁡</mo><mo stretchy="false">
+  [</mo><mi>I</mi><mo stretchy="false">]</mo></mtd><mtd><mi/><mo>=</mo><mrow>
+  <mo fence="true" stretchy="true">{</mo>
+  <mtable columnalign="left left" rowspacing=".2em" columnspacing="1em" displaystyle="false">
+  <mtr><mtd><mn>2</mn><mo stretchy="false">(</mo><mi>d</mi><mo>−</mo><mn>1</mn>
+  <mo stretchy="false">)</mo></mtd><mtd><mtext>pure</mtext></mtd></mtr><mtr>
+  <mtd><mo stretchy="false">(</mo><mi>d</mi><mo>+</mo><mn>1</mn>
+  <mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>d</mi><mo>−</mo><mn>
+  1</mn><mo stretchy="false">)</mo></mtd><mtd><mtext>full rank</mtext></mtd>
+  </mtr></mtable><mo fence="true" stretchy="true"></mo></mrow></mtd></mtr>
+  </mtable></mrow><annotation encoding="application/x-tex">
+  \begin{align}
+    \operatorname{tr}[I]&amp;=\begin{cases}2(d-1) &amp; \text{pure} \\
+    (d+1)(d-1) &amp; \text{full rank}\end{cases}
+  \end{align}</annotation></semantics></math>
+  <cite>R. D. Gill and S. Massar,
+  <a href="http://dx.doi.org/10.1103/PhysRevA.61.042312">Phys. Rev. A
+  <strong>61</strong>, 042312 (2000)</a></cite>
+</section>
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
+<section>
+  <h2>Fisher symmetry</h2>
+  <p>Extract all information:
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow>
+  <mi mathvariant="normal">tr</mi><mo>⁡</mo><mo stretchy="false">[</mo><msup>
+  <mi>Q</mi><mrow class="MJX-TeXAtom-ORD"><mo>−</mo><mn>1</mn></mrow></msup><mi>
+  C</mi><mo stretchy="false">]</mo><mo>=</mo><mi>d</mi><mo>−</mo><mn>1</mn>
+  </mrow><annotation encoding="application/x-tex">
+  \operatorname{tr}[Q^{-1}C]=d-1</annotation></semantics></math></p>
+  <p>Measure with equal precision in all directions</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>C</mi></mtd><mtd><mi/><mo>=</mo><mrow>
+  <mo fence="true" stretchy="true">{</mo>
+  <mtable columnalign="left left" rowspacing=".2em" columnspacing="1em" displaystyle="false">
+  <mtr><mtd><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>Q</mi></mtd><mtd><mtext>
+  pure</mtext></mtd></mtr><mtr><mtd><mfrac><mn>1</mn><mrow><mi>d</mi><mo>+</mo>
+  <mn>1</mn></mrow></mfrac><mi>Q</mi></mtd><mtd><mtext>full rank</mtext></mtd>
+  </mtr></mtable><mo fence="true" stretchy="true"></mo></mrow></mtd></mtr>
+  </mtable></mrow><annotation encoding="application/x-tex">
+  \begin{align}
+    C&amp;=\begin{cases}\frac{1}{2}Q &amp; \text{pure} \\
+    \frac{1}{d+1}Q &amp; \text{full rank}\end{cases}
+  \end{align}</annotation></semantics></math>
+</section>
 
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
+<section>
+  <h2>Fisher symmetry</h2>
+  <img src="img/quantum-fisher.svg" height=400px />
+  <p>&zwnj;</p><!-- Props image up to same height as following slide -->
+</section>
 
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
+<section>
+  <h2>Fisher symmetry</h2>
+  <img src="img/fisher-symmetric.svg" height=400px />
+  <p>&zwnj;</p><!-- Props image up to same height as following slide -->
+</section>
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+<section>
+  <h2>Fisher symmetry</h2>
+  <img src="img/fisher-symmetric.svg" height=400px />
+  <p>Can we do this?</p>
+</section>
 
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
+<section>
+  <h2>Pure states: <span class='green'>&#x2714;</span></h2>
+  <img src='img/trines.svg' height=300px />
+  <p>Li <em>et al.</em> have shown FSMs to exist for pure states in all
+  dimensions and given an explicit construction</p>
+  <cite>N. Li, C. Ferrie, J. A. Gross, A. Kalev, and C. M. Caves,
+  <a href="http://arxiv.org/abs/1507.06904">arXiv:1507.06904</a></cite>
+</section>
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
+<section>
+  <h2>Maximally mixed state: <span class='green'>&#x2714;</span></h2>
+  <p>POVM is an FSM iff it is a <strong>2-design</strong></p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><munder><mo stretchy="false">∑</mo><mi mathvariant="italic">ξ</mi>
+  </munder><mfrac><mrow><msup><mi>E</mi><mi mathvariant="italic">ξ</mi></msup>
+  <mo stretchy="false" largeop="false">⊗</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup></mrow><mrow><mi mathvariant="normal">
+  tr</mi><mo>⁡</mo><mo stretchy="false">[</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><mo stretchy="false">]</mo></mrow>
+  </mfrac></mtd><mtd><mi/><mo>=</mo><mfrac><mn>1</mn><mrow><mi>d</mi><mo>+</mo>
+  <mn>1</mn></mrow></mfrac><munder><mo stretchy="false">∑</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi>j</mi><mo>,</mo><mi>k</mi></mrow></munder>
+  <mrow class="MJX-TeXAtom-ORD">
+  <mo fence="true" stretchy="true" symmetric="true" maxsize="1.623em" minsize="1.623em">
+  (</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+  <msub><mi>e</mi><mi>j</mi></msub><mo fence="false" stretchy="false">⟩</mo>
+  <mo fence="false" stretchy="false">⟨</mo><msub><mi>e</mi><mi>j</mi></msub>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+  <mo stretchy="false" largeop="false">⊗</mo><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow><msub><mi>e</mi><mi>k</mi></msub>
+  <mo fence="false" stretchy="false">⟩</mo><mo fence="false" stretchy="false">
+  ⟨</mo><msub><mi>e</mi><mi>k</mi></msub><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow></mtd></mtr><mtr><mtd/><mtd>
+  <mrow class="MJX-TeXAtom-ORD"><mpadded height="0" depth="0"><mphantom><mo>
+  =</mo><mfrac><mn>1</mn><mrow><mi>d</mi><mo>+</mo><mn>1</mn></mrow></mfrac>
+  <munder><mo stretchy="false">∑</mo><mrow class="MJX-TeXAtom-ORD"><mi>j</mi>
+  <mo>,</mo><mi>k</mi></mrow></munder><mrow class="MJX-TeXAtom-ORD">
+  <mo fence="true" stretchy="true" symmetric="true" maxsize="1.623em" minsize="1.623em">
+  (</mo></mrow></mphantom></mpadded></mrow><mo>+</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><msub><mi>
+  e</mi><mi>j</mi></msub><mo fence="false" stretchy="false">⟩</mo>
+  <mo fence="false" stretchy="false">⟨</mo><msub><mi>e</mi><mi>k</mi></msub>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+  <mo stretchy="false" largeop="false">⊗</mo><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow><msub><mi>e</mi><mi>k</mi></msub>
+  <mo fence="false" stretchy="false">⟩</mo><mo fence="false" stretchy="false">
+  ⟨</mo><msub><mi>e</mi><mi>j</mi></msub><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow><mrow class="MJX-TeXAtom-ORD">
+  <mo fence="true" stretchy="true" symmetric="true" maxsize="1.623em" minsize="1.623em">
+  )</mo></mrow></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    \sum_\xi\frac{E^\xi\otimes E^\xi}{\operatorname{tr}[E^\xi]}
+    &amp;=\frac{1}{d+1}\sum_{j,k}\Big(
+    |e_j\rangle\langle e_j|\otimes|e_k\rangle\langle e_k| \\
+    &amp;\hphantom{=\frac{1}{d+1}\sum_{j,k}\Big(}
+    +|e_j\rangle\langle e_k|\otimes|e_k\rangle\langle e_j|\Big)
+  \end{align}</annotation></semantics></math>
+  <p>Examples: SIC-POVMs, MUBs, uniformly random basis
+</section>
 
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+<section>
+  <h2>Qubits: <span class='green'>&#x2714;</span></h2>
+  <img src="img/povmstate-z-000.png" height=400px />
+</section>
 
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
+<section>
+  <h2>Qubits: <span class='green'>&#x2714;</span></h2>
+  <img src="img/povmstate-z-249.png" height=400px />
+</section>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
+<section>
+  <h2>Symmetry of CFI</h2>
+  <p>Consider tensor form of CFI</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><munder><mo stretchy="false">∑</mo><mi mathvariant="italic">ξ</mi>
+  </munder><mfrac><mrow><msup><mi>E</mi><mi mathvariant="italic">ξ</mi></msup>
+  <mo stretchy="false" largeop="false">⊗</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup></mrow><mrow><mi mathvariant="normal">
+  tr</mi><mo>⁡</mo><mo stretchy="false">[</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><mi mathvariant="italic">ρ</mi>
+  <mo stretchy="false">]</mo></mrow></mfrac></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    \sum_\xi\frac{E^\xi\otimes E^\xi}{\operatorname{tr}[E^\xi\rho]}
+  \end{align}</annotation></semantics></math>
+  <p>This is invariant under the Choi isomorphism</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+  <msub><mi>e</mi><mi>j</mi></msub><mo fence="false" stretchy="false">⟩</mo>
+  <mo fence="false" stretchy="false">⟨</mo><msub><mi>e</mi><mi>k</mi></msub>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+  <mo stretchy="false" largeop="false">⊗</mo><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow><msub><mi>e</mi><mi>m</mi></msub>
+  <mo fence="false" stretchy="false">⟩</mo><mo fence="false" stretchy="false">
+  ⟨</mo><msub><mi>e</mi><mi>n</mi></msub><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow></mtd><mtd><mi/><mo stretchy="false">↔</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><msub><mi>
+  e</mi><mi>j</mi></msub><mo fence="false" stretchy="false">⟩</mo>
+  <mo fence="false" stretchy="false">⟨</mo><msub><mi>e</mi><mi>n</mi></msub>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+  <mo stretchy="false" largeop="false">⊗</mo><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow><msub><mi>e</mi><mi>m</mi></msub>
+  <mo fence="false" stretchy="false">⟩</mo><mo fence="false" stretchy="false">
+  ⟨</mo><msub><mi>e</mi><mi>k</mi></msub><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    |e_j\rangle\langle e_k|\otimes|e_m\rangle\langle e_n|
+    &amp;\leftrightarrow|e_j\rangle\langle e_n|\otimes|e_m\rangle\langle e_k|
+  \end{align}</annotation></semantics></math>
+</section>
 
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
+<section>
+  <h2>Asymmetry of QFI</h2>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="italic">ρ</mi></mtd><mtd><mi/><mo>=</mo><munder>
+  <mo stretchy="false">∑</mo><mi>j</mi></munder><msup><mi mathvariant="italic">
+  λ</mi><mi>j</mi></msup><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">
+  |</mo></mrow><msub><mi>e</mi><mi>j</mi></msub>
+  <mo fence="false" stretchy="false">⟩</mo><mo fence="false" stretchy="false">
+  ⟨</mo><msub><mi>e</mi><mi>j</mi></msub><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    \rho&amp;=\sum_j\lambda^j|e_j\rangle\langle e_j|
+  \end{align}</annotation></semantics></math>
+  <p>For the QFI to be invariant under the Choi isomorphism, it must be that</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><msup><mi mathvariant="italic">λ</mi><mi>j</mi></msup><mo>+</mo>
+  <msup><mi mathvariant="italic">λ</mi><mi>k</mi></msup></mtd><mtd><mi/><mo>
+  =</mo><mfrac><mn>2</mn><mi>d</mi></mfrac></mtd><mtd><mi>j</mi></mtd><mtd><mi/>
+  <mo stretchy="false">≠</mo><mi>k</mi></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    \lambda^j+\lambda^k&amp;=\frac{2}{d} &amp; j&amp;\neq k
+  \end{align}</annotation></semantics></math>
+  <p>Only true for qubits and at the maximally mixed state</p>
+</section>
 
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
+<section>
+  <h2>Higher dimensions: <span class='red'>&#x2718;</span></h2>
+  What is the next-best thing?
+</section>
 
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
+<section>
+  <h2>Purity for CFI</h2>
+  <p>Want accuracy <q>spread out</q> over all parameters as much as possible</p>
+  <p>Purity measures the uniformity of the eigenvalues of
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow>
+  <mi mathvariant="italic">ρ</mi></mrow>
+  <annotation encoding="application/x-tex">\rho</annotation></semantics></math>
+  </p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mtext>purity</mtext></mtd><mtd><mi/><mo>=</mo>
+  <mi mathvariant="normal">tr</mi><mo>⁡</mo><mo stretchy="false">[</mo><msup>
+  <mi mathvariant="italic">ρ</mi><mn>2</mn></msup><mo stretchy="false">]</mo>
+  </mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">
+  \begin{align}
+    \text{purity}&amp;=\operatorname{tr}[\rho^2]
+  \end{align}</annotation></semantics></math>
+  <p>Analogous quantity for the CFI</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="normal">tr</mi><mo>⁡</mo><mo stretchy="false">
+  [</mo><msup><mi>Q</mi><mrow class="MJX-TeXAtom-ORD"><mo>−</mo><mn>1</mn>
+  </mrow></msup><mi>C</mi><msup><mi>Q</mi><mrow class="MJX-TeXAtom-ORD"><mo>
+  −</mo><mn>1</mn></mrow></msup><mi>C</mi><mo stretchy="false">]</mo></mtd><mtd>
+  <mi/><mo>=</mo><msup><mi>C</mi><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="italic">α</mi><mi mathvariant="italic">β</mi></mrow></msup>
+  <msub><mi>C</mi><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="italic">α</mi>
+  <mi mathvariant="italic">β</mi></mrow></msub></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    \operatorname{tr}[Q^{-1}CQ^{-1}C]&amp;=C^{\alpha\beta}C_{\alpha\beta}
+  \end{align}</annotation></semantics></math>
+</section>
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
+<section>
+  <h2>New idea of symmetry</h2>
+  <p>Minimize the <q>purity</q> of the CFI</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mo fence="false" stretchy="false">{</mo><msubsup><mi>E</mi><mtext>
+  FS</mtext><mi mathvariant="italic">ξ</mi></msubsup>
+  <mo fence="false" stretchy="false">}</mo></mtd><mtd><mi/><mo>=</mo><munder>
+  <mrow class="MJX-TeXAtom-OP"><mi mathvariant="normal">a</mi>
+  <mi mathvariant="normal">r</mi><mi mathvariant="normal">g</mi>
+  <mspace width=".1667em"/><mi mathvariant="normal">m</mi>
+  <mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow><mrow>
+  <mo fence="false" stretchy="false">{</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><mo fence="false" stretchy="false">
+  }</mo></mrow></munder><mspace width=".1667em"/><msup><mi>C</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="italic">α</mi>
+  <mi mathvariant="italic">β</mi></mrow></msup><msub><mi>C</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="italic">α</mi>
+  <mi mathvariant="italic">β</mi></mrow></msub></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    \{E^\xi_\text{FS}\}&amp;=\underset{\{E^\xi\}}{\operatorname{arg\,min}}
+    \,C^{\alpha\beta}C_{\alpha\beta}
+  \end{align}</annotation></semantics></math>
+</section>
 
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
+<section>
+  <h2>Will this exist?</h2>
+  <p>Since we are minimizing a quadratic function over a convex set, the minima
+  exist, so now we just have to find them.</p>
+</section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
+<section>
+  <h2>The hunt</h2>
+  <p>Still not trivial to find</p>
+  <p><strong>Strategy</strong>: perturb SIC-POVM as we leave maximally mixed
+  state such that the CFI <q>purity</q> is minimized</p>
+</section>
 
-			</div>
+<section>
+  <h2>What have we learned?</h2>
+  <ol><li>
+  <p>Limitations of strict symmetry requirements (or: why one should never
+  trust qubits)</p>
+  <table>
+    <tr><td>Pure states</td><td><span class='green'>&#x2714;</span></td></tr>
+    <tr><td>Maximally mixed state</td>
+    <td><span class='green'>&#x2714;</span></td></tr>
+    <tr><td>Qubits</td><td><span class='green'>&#x2714;</span></td></tr>
+    <tr><td>Full-rank higher dimension</td>
+    <td><span class='red'>&#x2718;</span></td></tr>
+  </table>
+  </li>
+  <li>
+  <p>Promising preliminary perturbative results</p>
+  </li>
+  </ol>
+</section>
 
-		</div>
+<section>
+  <h2>What's next?</h2>
+  <ol>
+    <li>Extend perturbative results</li>
+    <li>Understand structure of CFI</li>
+    <li>Employ tools to understand other problems in quantum information</li>
+  </ol>
+</section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+</div>
 
-		<script>
+</div>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+<script>
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+  // Full list of configuration options available at:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: false,
+    progress: true,
+    history: true,
+    center: false,
 
-		</script>
+    transition: 'none', // none/fade/slide/convex/concave/zoom
 
-	</body>
+    // Optional reveal.js plugins
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  });
+
+</script>
+
+</body>
 </html>
