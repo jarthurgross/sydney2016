@@ -17,22 +17,22 @@
    sodipodi:docname="2nd-measurement.svg">
   <sodipodi:namedview
      id="base"
-     pagecolor="#000000"
+     pagecolor="#7e7e7e"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.6627451"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="278.97193"
-     inkscape:cy="250.72216"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="374.46242"
+     inkscape:cy="350.0819"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1385"
-     inkscape:window-height="1054"
-     inkscape:window-x="1920"
+     inkscape:window-width="1920"
+     inkscape:window-height="1058"
+     inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="0">
+     inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
        id="grid2997"
@@ -120,7 +120,7 @@
     <g
        id="g5637">
       <path
-         d="m 456,256 a 200,40 0 1 1 -400,0 200,40 0 1 1 400,0 z"
+         d="m 456,256 c 0,22.09139 -89.54305,40 -200,40 -110.45695,0 -200,-17.90861 -200,-40 0,-22.09139 89.54305,-40 200,-40 110.45695,0 200,17.90861 200,40 z"
          sodipodi:ry="40"
          sodipodi:rx="200"
          sodipodi:cy="256"
@@ -131,7 +131,7 @@
          transform="translate(0,540.36218)" />
       <path
          transform="translate(0,540.36218)"
-         d="m 456,256 a 200,40 0 1 1 -400,0 200,40 0 1 1 400,0 z"
+         d="m 456,256 c 0,22.09139 -89.54305,40 -200,40 -110.45695,0 -200,-17.90861 -200,-40 0,-22.09139 89.54305,-40 200,-40 110.45695,0 200,17.90861 200,40 z"
          sodipodi:ry="40"
          sodipodi:rx="200"
          sodipodi:cy="256"
@@ -202,7 +202,7 @@
        sodipodi:cy="256"
        sodipodi:rx="8"
        sodipodi:ry="8"
-       d="m 264,256 a 8,8 0 1 1 -16,0 8,8 0 1 1 16,0 z"
+       d="m 264,256 c 0,4.41828 -3.58172,8 -8,8 -4.41828,0 -8,-3.58172 -8,-8 0,-4.41828 3.58172,-8 8,-8 4.41828,0 8,3.58172 8,8 z"
        transform="translate(0,540.36218)" />
     <path
        transform="translate(0,500.36218)"
@@ -213,7 +213,7 @@
        sodipodi:cy="256"
        sodipodi:rx="8"
        sodipodi:ry="8"
-       d="m 264,256 a 8,8 0 1 1 -16,0 8,8 0 1 1 16,0 z" />
+       d="m 264,256 c 0,4.41828 -3.58172,8 -8,8 -4.41828,0 -8,-3.58172 -8,-8 0,-4.41828 3.58172,-8 8,-8 4.41828,0 8,3.58172 8,8 z" />
     <path
        sodipodi:type="arc"
        style="opacity:1;color:#000000;fill:#4daf4a;stroke:#000000;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;fill-opacity:1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
@@ -222,7 +222,7 @@
        sodipodi:cy="256"
        sodipodi:rx="8"
        sodipodi:ry="8"
-       d="m 304,256 a 8,8 0 1 1 -16,0 8,8 0 1 1 16,0 z"
+       d="m 304,256 c 0,4.41828 -3.58172,8 -8,8 -4.41828,0 -8,-3.58172 -8,-8 0,-4.41828 3.58172,-8 8,-8 4.41828,0 8,3.58172 8,8 z"
        transform="translate(0,540.36218)" />
     <g
        id="g5323-8"
@@ -252,5 +252,39 @@
            sodipodi:role="line"
            style="font-size:36px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">2</tspan></text>
     </g>
+    <g
+       id="g3024-6"
+       transform="translate(45.298279,-165.7159)"
+       style="fill:#8da0cb;fill-opacity:1">
+      <text
+         transform="translate(0,540.36218)"
+         sodipodi:linespacing="125%"
+         id="text3016-8"
+         y="366.53802"
+         x="352.54324"
+         style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#8da0cb;fill-opacity:1;stroke:none;font-family:Lato;-inkscape-font-specification:Lato"
+         xml:space="preserve"><tspan
+           style="font-size:36px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#8da0cb;fill-opacity:1;font-family:Latin Modern Roman Unslanted;-inkscape-font-specification:Latin Modern Roman Unslanted"
+           y="366.53802"
+           x="352.54324"
+           id="tspan3018-7"
+           sodipodi:role="line">C</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3020-7"
+         y="923.06262"
+         x="380.82751"
+         style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#8da0cb;fill-opacity:1;stroke:none;font-family:Lato;-inkscape-font-specification:Lato"
+         xml:space="preserve"><tspan
+           y="923.06262"
+           x="380.82751"
+           id="tspan3022-9"
+           sodipodi:role="line"
+           style="font-family:Latin Modern Roman;-inkscape-font-specification:Latin Modern Roman;fill:#8da0cb;fill-opacity:1">1</tspan></text>
+    </g>
+    <g
+       id="g3024-6-7"
+       transform="translate(-193.48807,-267.14024)"
+       style="fill:#8da0cb;fill-opacity:1" />
   </g>
 </svg>

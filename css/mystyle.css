@@ -92,6 +92,21 @@ math {
   color: #f781bf;
 }
 
+/* Other colors */
+
+.lightgreen {
+  color: #7fc97f;
+}
+
+.lightpurple {
+  color: #beaed4;
+}
+
+/* "Classical Fisher" purple */
+.cfpurple {
+  color: #8da0cb;
+}
+
 .center {
   text-align: center;
 }
