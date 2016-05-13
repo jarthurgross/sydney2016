@@ -17,6 +17,10 @@ body {
 	overflow: visible;
 }
 
+.reveal {
+  color: #000;
+}
+
 html {
 	width: 100%;
 	height: 100%;
