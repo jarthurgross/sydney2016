@@ -6,13 +6,20 @@
 
   <title>Fisher symmetry and the geometry of quantum states</title>
 
-  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-  <meta name="author" content="Hakim El Hattab">
+  <meta name="description" content="Talk given on 2016-05-12 at the University of Sydney">
+  <meta name="author" content="Jonathan A. Gross">
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <!-- Loading the font can be a bit tricky... -->
+  <!-- For when this is posted online
+  <link href='https://fonts.googleapis.com/css?family=Lato:900,900italic,300italic,300,700,700italic,400italic,400' rel='stylesheet' type='text/css'>
+  -->
+  <!-- For when I don't have a reliable internet connection -->
+  <link rel="stylesheet" href="css/lato.css">
 
   <link rel="stylesheet" href="css/reveal.css">
   <link rel="stylesheet" href="css/theme/black.css" id="theme">
@@ -30,7 +37,9 @@
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
 
+  <!-- For when posting online so it works with Chrome
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  -->
 
   <!--[if lt IE 9]>
   <script src="lib/js/html5shiv.js"></script>
@@ -68,6 +77,14 @@
 
 <section>
   <h2>Statistical distance</h2>
+  <p>Quantify distance between two quantum states by how statistically
+  distinguishable they are</p>
+  <p><strong>More distinguishable</strong>: further apart</p>
+  <p><strong>Less distinguishable</strong>: closer together</p>
+</section>
+
+<section>
+  <h2>Example: coin bias</h2>
   <img src='img/coin_distance.svg' height=400px />
   <p>How far apart are coins with different biases?</p>
   <cite>W. K. Wootters,
@@ -76,7 +93,7 @@
 </section>
 
 <section>
-  <h2>Statistical distance</h2>
+  <h2>Example: coin bias</h2>
   <img src='img/coin_distance_w_semicircle.svg' height=400px />
   <p>How far apart are coins with different biases?</p>
   <cite>W. K. Wootters,
@@ -85,7 +102,7 @@
 </section>
 
 <section>
-  <h2>Statistical distance</h2>
+  <h2>Example: coin bias</h2>
   <img src='img/coin_distance_w_fluctuations.svg' height=400px />
   <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <semantics><mrow>
@@ -101,9 +118,175 @@
 </section>
 
 <section>
+  <h2>Statistical fluctuations</h2>
+  <p>The fluctuations depend on the estimator used</p>
+  <p>The <strong>Cramér&ndash;Rao bound</strong> gives us an achievable lower
+  bound</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="double-struck">E
+  </mi></mrow><mrow><mo fence="true" stretchy="true">[</mo>
+  <mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mover accent="true"><mi>p</mi>
+  <mo stretchy="false" accent="true">^</mo></mover></mrow><msup>
+  <mo stretchy="false">)</mo><mn>2</mn></msup>
+  <mo fence="true" stretchy="true">]</mo></mrow></mtd><mtd><mi/>
+  <mo stretchy="false">≥</mo><mfrac><mn>1</mn><mrow><mi>F</mi>
+  <mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow>
+  </mfrac></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  \mathbb{E}\left[(\Delta\hat{p})^2\right]&amp;\geq\frac{1}{F(p)}
+  \end{align}</annotation></semantics>
+  </math>
+  <p>This allows us to generally define our statistical distance in terms of the
+  <strong>Fisher information (FI)</strong></p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>d</mi><mi>s</mi></mtd><mtd><mi/><mo stretchy="false">∼</mo>
+  <mfrac><mrow><mi>d</mi><mi>p</mi></mrow><mrow><mi mathvariant="normal">Δ</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mover accent="true"><mi>p</mi>
+  <mo stretchy="false" accent="true">^</mo></mover></mrow></mrow></mfrac>
+  <mo stretchy="false">→</mo><msqrt><mi>F</mi><mo stretchy="false">(</mo><mi>p
+  </mi><mo stretchy="false">)</mo></msqrt><mspace width=".1667em"/><mi>d</mi>
+  <mi>p</mi></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    ds&amp;\sim\frac{dp}{\Delta\hat{p}}\to\sqrt{F(p)}\,dp
+  \end{align}
+  </annotation></semantics></math>
+</section>
+
+<section>
   <h2>Fisher information</h2>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>F</mi><mo stretchy="false">(</mo><mi>p</mi>
+  <mo stretchy="false">)</mo></mtd><mtd><mi/><mo>=</mo><munder>
+  <mo stretchy="false">∑</mo><mrow class="MJX-TeXAtom-ORD"><mtext>Outcomes
+  </mtext></mrow></munder><mi mathvariant="normal">Pr</mi><mo>⁡</mo>
+  <mo stretchy="false">(</mo><mtext>outcome</mtext>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mi>p</mi>
+  <mo stretchy="false">)</mo><msup><mrow><mo fence="true" stretchy="true">{
+  </mo><mfrac><mi>d</mi><mrow><mi>d</mi><mi>p</mi></mrow></mfrac><mi>ln</mi>
+  <mo>⁡</mo><mrow class="MJX-TeXAtom-ORD">
+  <mo fence="true" stretchy="true" symmetric="true" maxsize="1.623em" minsize="1.623em">
+  [</mo></mrow><mi mathvariant="normal">Pr</mi><mo>⁡</mo><mo stretchy="false">(
+  </mo><mtext>outcome</mtext><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow><mi>p</mi><mo stretchy="false">)</mo>
+  <mrow class="MJX-TeXAtom-ORD">
+  <mo fence="true" stretchy="true" symmetric="true" maxsize="1.623em" minsize="1.623em">
+  ]</mo></mrow><mo fence="true" stretchy="true">}</mo></mrow><mn>2</mn></msup>
+  </mtd></mtr><mtr><mtd/><mtd><mi/><mo>=</mo><munder><mo stretchy="false">∑
+  </mo><mrow class="MJX-TeXAtom-ORD"><mtext>Outcomes</mtext></mrow></munder>
+  <mfrac><msup><mrow><mo fence="true" stretchy="true">[</mo><mfrac><mi>d</mi>
+  <mrow><mi>d</mi><mi>p</mi></mrow></mfrac><mi mathvariant="normal">Pr</mi>
+  <mo>⁡</mo><mo stretchy="false">(</mo><mtext>outcome</mtext>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mi>p</mi>
+  <mo stretchy="false">)</mo><mo fence="true" stretchy="true">]</mo></mrow>
+  <mn>2</mn></msup><mrow><mi mathvariant="normal">Pr</mi><mo>⁡</mo>
+  <mo stretchy="false">(</mo><mtext>outcome</mtext>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mi>p</mi>
+  <mo stretchy="false">)</mo></mrow></mfrac></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  F(p)&amp;=\sum_{\text{Outcomes}}\operatorname{Pr}(\text{outcome}|p)
+  \left\{\frac{d}{dp}\ln\Big[\operatorname{Pr}(\text{outcome}|p)
+  \Big]\right\}^2 \\
+  &amp;=\sum_{\text{Outcomes}}\frac{\left[\frac{d}{dp}
+  \operatorname{Pr}(\text{outcome}|p)\right]^2}
+  {\operatorname{Pr}(\text{outcome}|p)}
+  \end{align}
+  </annotation></semantics></math>
+  <p>The FI quantifies the information a random variable provides about a
+  parameter</p>
+</section>
+
+<section>
+  <h2>Coin FI</h2>
+  <img src='img/coin_distance_w_fluctuations.svg' height=200px />
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd style="; min-width:7.364ex"><mrow><mi mathvariant="normal">Pr</mi>
+  <mo>⁡</mo><mo stretchy="false">(</mo><mi>H</mi><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow><mi>p</mi><mo stretchy="false">)</mo>
+  </mrow></mtd><mtd style="; min-width:3.682ex"><mrow><mi/><mo>=</mo><mi>p</mi>
+  </mrow></mtd><mtd style="; min-width:4.091ex"><mrow><mi>F</mi>
+  <mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow></mtd>
+  <mtd style="; min-width:13.364ex"><mrow><mi/><mo>=</mo><mfrac><msup><mn>1
+  </mn><mn>2</mn></msup><mi>p</mi></mfrac><mo>+</mo><mfrac><mrow>
+  <mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)
+  </mo><mn>2</mn></msup></mrow><mrow><mn>1</mn><mo>−</mo><mi>p</mi></mrow>
+  </mfrac></mrow></mtd></mtr><mtr><mtd style="; min-width:6.955ex"><mrow>
+  <mi mathvariant="normal">Pr</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>T
+  </mi><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mi>p
+  </mi><mo stretchy="false">)</mo></mrow></mtd>
+  <mtd style="; min-width:7.091ex"><mrow><mi/><mo>=</mo><mn>1</mn><mo>−</mo>
+  <mi>p</mi></mrow></mtd><mtd style="; min-width:0.000ex"><mrow/></mtd>
+  <mtd style="; min-width:9.955ex"><mrow><mi/><mo>=</mo><mfrac><mn>1</mn><mrow>
+  <mi>p</mi><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>p</mi>
+  <mo stretchy="false">)</mo></mrow></mfrac></mrow></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    \operatorname{Pr}(H|p)&amp;=p &amp; F(p)&amp;=\frac{1^2}{p}+\frac{(-1)^2}{1-p} \\
+    \operatorname{Pr}(T|p)&amp;=1-p &amp; &amp;=\frac{1}{p(1-p)}
+  \end{align}
+  </annotation></semantics></math>
+</section>
+
+<section>
+  <h2>Kullback&ndash;Leibler divergence</h2>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="script" class="MJX-tex-caligraphic">D</mi></mrow>
+  <mo stretchy="false">(</mo><mi>f</mi><mo fence="false" stretchy="false">∥
+  </mo><mi>g</mi><mo stretchy="false">)</mo></mtd><mtd><mi/><mo>:=</mo>
+  <mo stretchy="false">∫</mo><mi>d</mi><mi>x</mi><mspace width=".1667em"/><mi>f
+  </mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo>
+  <mspace width=".1667em"/><mi>ln</mi><mrow><mo fence="true" stretchy="true">(
+  </mo><mfrac><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi>
+  <mo stretchy="false">)</mo></mrow><mrow><mi>g</mi><mo stretchy="false">(</mo>
+  <mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac>
+  <mo fence="true" stretchy="true">)</mo></mrow></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    \mathcal{D}(f\Vert g)&amp;:=\int dx\,f(x)\,
+    \ln\left(\frac{f(x)}{g(x)}\right)
+  \end{align}
+  </annotation></semantics></math>
+  <p>Quantifies how likely you are to mistake one distribution for another (not
+  symmetric)</p>
+  <p>Locally it defines the same distance as the FI</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="script" class="MJX-tex-caligraphic">D</mi></mrow>
+  <mo stretchy="false">(</mo><msub><mi>f</mi><mi>p</mi></msub>
+  <mo fence="false" stretchy="false">∥</mo><msub><mi>f</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mi>p</mi><mo>+</mo><mi mathvariant="italic">δ
+  </mi><mi>p</mi></mrow></msub><mo stretchy="false">)</mo></mtd><mtd><mi/><mo>=
+  </mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi mathvariant="italic">δ</mi><msup>
+  <mi>p</mi><mn>2</mn></msup><mspace width=".1667em"/><mi>F</mi>
+  <mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mtd></mtr>
+  </mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+    \mathcal{D}(f_p\Vert f_{p+\delta p})&amp;=\frac{1}{2}\delta p^2\,F(p)
+  \end{align}
+  </annotation></semantics></math>
+</section>
+
+<section>
+  <h2>Multiple parameters</h2>
   <img src='img/badaman-dice.svg' height=200px />
-  <p>The <strong>Fisher information (FI)</strong> quantifies fluctuations</p>
   <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
   <mrow><mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
   <mtr><mtd><msub><mi>F</mi><mrow class="MJX-TeXAtom-ORD"><mi>j</mi><mi>k</mi>
@@ -131,17 +314,22 @@
     \,\partial_k\operatorname{Pr}(\text{outcome}|\mathbf{p})}
     {\operatorname{Pr}(\text{outcome}|\mathbf{p})}
   \end{align}</annotation></semantics></math>
-  <p>This matrix can be used as a metric:
-  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi>
-  <mi>s</mi><mo stretchy="false">∼</mo><msqrt><mi>d</mi><msup>
-  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
-  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi></mrow>
-  </msup><mi>F</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
-  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo><mi>d</mi>
-  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow></msqrt>
-  </mrow><annotation encoding="application/x-tex">
-  ds\sim\sqrt{d\mathbf{x}^\mathsf{T}F(\mathbf{x})d\mathbf{x}}</annotation>
-  </semantics></math></p>
+  <p>This matrix can be used as a metric</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics>
+  <mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>d</mi><mi>s</mi></mtd><mtd><mi/><mo stretchy="false">∼</mo>
+  <msqrt><mi>d</mi><msup><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">p
+  </mi></mrow><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi>
+  </mrow></msup><mi>F</mi><mo stretchy="false">(</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">p</mi></mrow>
+  <mo stretchy="false">)</mo><mspace width=".1667em"/><mi>d</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">p</mi></mrow></msqrt>
+  </mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">
+  \begin{align}
+    ds&amp;\sim\sqrt{d\mathbf{p}^\mathsf{T}F(\mathbf{p})\,d\mathbf{p}}
+  \end{align}
+  </annotation></semantics></math>
 </section>
 
 <section>
@@ -232,9 +420,10 @@
 <section>
   <h2>Quantum Fisher information</h2>
   <img src="img/quantum-fisher.svg" height=400px />
-  <p><cite>S. L. Braunstein and C. M. Caves,
+  <p></p>
+  <cite>S. L. Braunstein and C. M. Caves,
   <a href="http://dx.doi.org/10.1103/PhysRevLett.72.3439">Phys. Rev. Lett.
-    <strong>72</strong>, 3439 (1994)</a></cite></p>
+    <strong>72</strong>, 3439 (1994)</a></cite>
 </section>
 
 <section>
@@ -342,12 +531,24 @@
 </section>
 
 <section>
+  <h2>Local tomography</h2>
+  <img src='img/target_state.svg' height=400px />
+  <p>Have device to prepare a target state</p>
+</section>
+
+<section>
+  <h2>Local tomography</h2>
+  <img src='img/target_state_deviations.svg' height=400px />
+  <p>Want to measure deviations</p>
+</section>
+
+<section>
   <h2>Pure states: <span class='green'>&#x2714;</span></h2>
   <img src='img/trines.svg' height=300px />
-  <p>Li <em>et al.</em> have shown FSMs to exist for pure states in all
-  dimensions and given an explicit construction</p>
+  <p>FSMs have been constructed for pure states in all dimensions</p>
   <cite>N. Li, C. Ferrie, J. A. Gross, A. Kalev, and C. M. Caves,
-  <a href="http://arxiv.org/abs/1507.06904">arXiv:1507.06904</a></cite>
+    <a
+      href="http://dx.doi.org/10.1103/PhysRevLett.116.180402">Phys.&nbsp;Rev.&nbsp;Lett.&nbsp;<strong>116</strong>,&nbsp;180402&nbsp;(2016)</a></cite>
 </section>
 
 <section>
@@ -411,6 +612,39 @@
 <section>
   <h2>Qubits: <span class='green'>&#x2714;</span></h2>
   <img src="img/povmstate-z-249.png" height=400px />
+</section>
+
+<section>
+  <h2>Qubits: <span class='green'>&#x2714;</span></h2>
+  <img src="img/povmstate+z-000.png" height=400px />
+</section>
+
+<section>
+  <h2>Qubits: <span class='green'>&#x2714;</span></h2>
+  <img src="img/povmstate+z-249.png" height=400px />
+</section>
+
+<section>
+  <h2>State-space geometry</h2>
+  <img src='img/equatorial-plane.svg' height=300px />
+  <p>Consider equatorial plane of the Bloch ball</p>
+  <p>As in the simplex case, Euclidean distance doesn't reflect statistical
+  distance</p>
+</section>
+
+<section>
+  <h2>State-space geometry</h2>
+  <img src='img/bures-metric.svg' height=300px />
+  <p>Just like the simplex is naturally a semicircle, the Bloch ball is
+  naturally the upper hemisphere of
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>S
+  </mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">S^3
+  </annotation></semantics></math></p>
+</section>
+
+<section>
+  <h2>Qubits: <span class='green'>&#x2714;</span></h2>
+  <img src="img/povmstate+z-249.png" height=400px />
 </section>
 
 <section>
