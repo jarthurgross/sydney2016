@@ -15,7 +15,31 @@ body {
 	padding: 0;
 	float: none !important;
 	overflow: visible;
+  background-color: #fff;
+  background: #fff;
 }
+
+.reveal {
+  color: #000;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: #000;
+}
+
+::selection {
+  color: #fff;
+  background: #bee4fd;
+  text-shadow: none; }
+
+.reveal .roll span:after {
+  color: #000;
+  background: #fff; }
 
 html {
 	width: 100%;
